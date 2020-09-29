@@ -3,9 +3,12 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   margin: 0;
-  background-color: #fbab7e;
-  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+  background-color: #3f51b5;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../hills-material-design-wallpaper.png);
 }
+
 body {
   font-family: "Roboto", sans-serif;
   font-weight: light;
@@ -14,7 +17,8 @@ html {
   min-height: 100%;
 }
 header {
-  padding: 2rem;
+  padding: 0.5rem;
+  color: white;
 }
 
 main {
@@ -33,47 +37,6 @@ body {
 
 p {
   margin: 0;
-}
-.costWrapper {
-  margin: 10px;
-  flex: 1 1 300px;
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  padding: 20px 20px 20px 10px;
-  background-color: #ffffff;
-  -webkit-box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
-  -moz-box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
-  box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
-  border-radius: 10px;
-}
-
-.spentWrapper {
-  margin: 10px;
-  flex: 1 1 300px;
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  padding: 20px 20px 20px 10px;
-  background-color: #ffffff;
-  -webkit-box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
-  -moz-box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
-  box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
-  border-radius: 10px;
-}
-
-.thenWrapper {
-  margin: 10px;
-  flex: 1 1 300px;
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  padding: 20px 20px 20px 10px;
-  background-color: #ffffff;
-  -webkit-box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
-  -moz-box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
-  box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
-  border-radius: 10px;
 }
 
 .inputWrapper {
@@ -105,19 +68,74 @@ input {
   height: 100%;
 }
 
-.float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 40px;
-  right: 40px;
-  background-color: #0c9;
-  color: #fff;
-  border-radius: 50px;
-  text-align: center;
-  box-shadow: 2px 2px 3px #999;
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  max-width: 100%;
+  margin: 20px;
+  /* overflow: hidden; */
+
+  display: grid;
+  grid-template-columns: minmax(200px, 25%) 1fr;
 }
 
-.my-float {
-  margin-top: 22px;
+.card h6 {
+  opacity: 0.6;
+  margin: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card h2 {
+  letter-spacing: 1px;
+  margin: 10px 0;
+}
+
+.card-preview {
+  background-color: #2a265f;
+  color: #fff;
+
+  padding: 30px;
+  /* width: 200px; */
+}
+
+.card-preview a {
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 30px;
+  text-decoration: none;
+}
+
+.card-info {
+  padding: 30px;
+  position: relative;
+}
+.btn {
+  background-color: #2a265f;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 25px;
+
+  letter-spacing: 1px;
+}
+
+.btnWrapper {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+}
+
+@media screen and (max-width: 980px) {
+  .card {
+    display: flex;
+    flex-direction: column;
 }
