@@ -1,0 +1,123 @@
+body {
+  height: 100% !important;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  margin: 0;
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: light;
+}
+html {
+  min-height: 100%;
+}
+header {
+  padding: 2rem;
+}
+
+main {
+  height: auto;
+}
+
+footer {
+  background-color: aqua;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+}
+
+p {
+  margin: 0;
+}
+.costWrapper {
+  margin: 10px;
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 20px 20px 20px 10px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
+  border-radius: 10px;
+}
+
+.spentWrapper {
+  margin: 10px;
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 20px 20px 20px 10px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
+  border-radius: 10px;
+}
+
+.thenWrapper {
+  margin: 10px;
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 20px 20px 20px 10px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(103, 103, 103, 0.2);
+  border-radius: 10px;
+}
+
+.inputWrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin-bottom: 2px !important;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.cards {
+  display: flex;
+  /* grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+ */
+  flex-wrap: wrap;
+  place-items: center;
+  height: 100%;
+}
+
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #0c9;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+.my-float {
+  margin-top: 22px;
+}
