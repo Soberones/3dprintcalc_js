@@ -1,5 +1,5 @@
 save.onclick = function () {
-  let delivery = Number(document.getElementById("delivery").value);
+  // let delivery = Number(document.getElementById("delivery").value);
   let spoolWeight = Number(document.getElementById("spoolWeight").value);
   let spoolPrice = Number(document.getElementById("spoolPrice").value);
   let electricPrice = Number(document.getElementById("electricPrice").value);
@@ -12,7 +12,11 @@ save.onclick = function () {
   );
 
   let spentMaterial = Number(document.getElementById("spentMaterial").value);
-  localStorage.setItem("delivery", delivery);
+  let printTime = Number(document.getElementById("printTime").value);
+  let modelingTime = Number(document.getElementById("printTime").value);
+  let postTime = Number(document.getElementById("printTime").value);
+
+  // localStorage.setItem("delivery", delivery);
   localStorage.setItem("spoolWeight", spoolWeight);
   localStorage.setItem("spoolPrice", spoolPrice);
   localStorage.setItem("electricPrice", electricPrice);
@@ -23,7 +27,7 @@ save.onclick = function () {
   localStorage.setItem("powerPrinter", powerPrinter);
 };
 load.onclick = function () {
-  document.getElementById("delivery").value = localStorage.getItem("delivery");
+  // document.getElementById("delivery").value = localStorage.getItem("delivery");
   document.getElementById("spoolWeight").value = localStorage.getItem(
     "spoolWeight"
   );
@@ -39,6 +43,9 @@ load.onclick = function () {
   document.getElementById("printingPrice").value = localStorage.getItem(
     "printingPrice"
   );
+  document.getElementById("powerPrinter").value = localStorage.getItem(
+    "powerPrinter"
+  );
   document.getElementById("postPrice").value = localStorage.getItem(
     "postPrice"
   );
@@ -48,10 +55,43 @@ load.onclick = function () {
 };
 
 calculate.onclick = function () {
-  const k = Number(1000);
-  let materialSum = (spoolPrice.value + delivery.value) / spoolWeight.value;
-  let materialSumValue = materialSum / (k * spentMaterial.value);
+  const currency = "руб";
+  let materialSum =
+    (spoolPrice.value / spoolWeight.value / 1000) * spentMaterial.value;
+  let electicSum =
+    (electricPrice.value * powerPrinter.value * printTime.value) / 60;
+  let modelingSum = (modelingTime.value / 60) * modelingPrice.value;
+  let ptintSum = (printTime.value / 60) * printingPrice.value;
+  let postSum = (postTime.value / 60) * postPrice.value;
+  let depreciationSum = (printTime.value / 60) * depreciationPrice.value;
+  let fullSum =
+    materialSum +
+    electicSum +
+    modelingSum +
+    ptintSum +
+    postSum +
+    depreciationSum;
+  let fullSumtwo = fullSum - modelingSum;
 
-  console.log(materialSumValue);
-  document.getElementById("testss").innerHTML = materialSumValue;
+  console.log(materialSum, "матер");
+  console.log(electicSum, "элекст");
+  console.log(modelingSum, "модел");
+  console.log(ptintSum, "печать");
+  console.log(postSum, "пост");
+  console.log(depreciationSum, "аморт");
+  console.log(fullSum, "цена детали");
+  console.log(fullSumtwo, "цена вт детали");
+  // document.getElementById("testss").innerHTML = materialSum;
+  document.getElementById("mat").innerHTML = materialSum.toFixed(2);
+  document.getElementById("ele").innerHTML = electicSum.toFixed(2);
+  document.getElementById("mod").innerHTML = modelingSum.toFixed(2);
+  document.getElementById("prt").innerHTML = ptintSum.toFixed(2);
+  document.getElementById("pos").innerHTML = postSum.toFixed(2);
+  document.getElementById("amr").innerHTML = depreciationSum.toFixed(2);
+  document.getElementById("pone").innerHTML = fullSum.toFixed(2);
+  document.getElementById("pnext").innerHTML = fullSumtwo.toFixed(2);
 };
+
+function myFunction() {
+  document.location.replace("#popup-article");
+}

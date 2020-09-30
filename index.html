@@ -20,7 +20,9 @@
 
   <body>
     <header>
-      <h1 class="title">3D printer cost</h1>
+      <!-- <h1 class="title">3D printer cost</h1> -->
+      <!-- <img src="src/logo.png" alt="logo" 
+      > -->
     </header>
     <main>
       <div id="test"></div>
@@ -35,13 +37,13 @@
               ></a>
             </div>
             <div class="card-info">
-              <h6>Chapter 4</h6>
-              <h2 >Callbacks & Closures</h2>
+              <!-- <h6>1</h6>
+              <h2 >Обязательные поля</h2> -->
 
-              <div class="inputWrapper">
+              <!-- <div class="inputWrapper">
                 <p>Доставка</p>
                 <input id="delivery" type="number" placeholder="рублей" />
-              </div>
+              </div> -->
               <div class="inputWrapper">
                 <p>Вес катушки</p>
                 <input
@@ -108,46 +110,55 @@
               <!-- <a href="#">View all chapters <i class="fas fa-chevron-right"></i></a> -->
             </div>
             <div class="card-info">
-              <h6>Chapter 4</h6>
-              <h2>Callbacks & Closures</h2>
-
+              <!-- <h6>Chapter 4</h6>
+              <h2>Callbacks & Closures</h2> -->
+              <form onsubmit="myFunction()">
               <div class="inputWrapper">
                 <p>Потрачено материала</p>
-                <input id="spentMaterial" type="number" placeholder="в граммах" />
+                <input id="spentMaterial" type="number" placeholder="в граммах" required/>
               </div>
 
               <div class="inputWrapper">
                 <p>Моделирование</p>
-                <input id="modelingTime" type="number" placeholder="в минутах" />
+                <input id="modelingTime" type="number" placeholder="в минутах" required/>
               </div>
               <div class="inputWrapper">
                 <p>Печать</p>
-                <input id="printTime" type="number" placeholder="в минутах" />
+                <input id="printTime" type="number" placeholder="в минутах" required/>
               </div>
               <div class="inputWrapper">
                 <p>Постобработка</p>
-                <input id="postTime" type="number" placeholder="в минутах" />
+                <input id="postTime" type="number" placeholder="в минутах" required/>
               </div>
-              <div class="inputWrapper">
+              <!-- <div class="inputWrapper">
                 <p>Количество</p>
                 <input id="items" type="number" placeholder="в минутах" />
-              </div>
-              <button class="btn">Сохранить</button>
+              </div> -->
+              <!-- <div class="btnWrapper">
+                
+                <a href="#popup-article" id="calculate" class="btn">Посчитать</a>
+              </div> -->
+              <div class="sumbitWrapper"><input class="inputSumbit" id="calculate" type="submit" ></div>
+              
+              
+            </form>
+              
+
               <!--попап анимация-->
-              <div class="page__container">
-                <a href="#popup-article" id="calculate" class="btn">open popup</a>
-              </div>
             </div>
             <div id="popup-article" class="popup">
               <div class="popup__block">
-                <h1 id="testss" class="popup__title">rance</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam eaque optio vitae in explicabo recusandae sit id sapiente excepturi tempore, nemo, nulla odio deleniti rerum nisi perferendis aut molestias! Incidunt nesciunt iusto praesentium! In at maiores quibusdam enim quis, quam!</p>
-                <p>Architecto magni dolores cumque tenetur nemo id aperiam, ratione temporibus at, consectetur totam, fuga et illo rerum earum dicta. Vitae ullam harum enim aliquid hic commodi voluptas cumque iste ex accusantium architecto doloremque reprehenderit, asperiores vero dolor, esse inventore dolorem.</p>
-                <p>Excepturi eaque, reprehenderit dolores, cum molestias repellendus in expedita. Placeat totam, quos pariatur quidem explicabo id harum ab voluptatum. Necessitatibus, aliquam! Dolorum voluptatem ut laudantium excepturi cumque, hic iure impedit ullam accusantium error natus recusandae, quia fuga quo voluptates officiis?</p>    
-                <p>Dignissimos debitis eos necessitatibus accusantium natus voluptates illo blanditiis corporis minus. Repudiandae libero quae, illo error expedita consectetur possimus voluptate eum esse quam molestiae tempore dignissimos ipsam similique ab quod. Ea earum adipisci rem voluptatem aliquid voluptatum deleniti necessitatibus provident.</p>
-                <p>Dicta eum amet impedit maiores accusamus numquam saepe necessitatibus temporibus ut! Velit ducimus repellendus fuga repudiandae culpa voluptatibus delectus praesentium totam odit ratione, tenetur assumenda, labore esse et nostrum a, aut veritatis. Nihil, voluptas, impedit? Magnam dolorum, iure repellendus vitae.</p>
-                <p>Temporibus voluptatum voluptatibus iste, nam atque dignissimos quam labore sequi adipisci tempore exercitationem quos, libero, reprehenderit facere quasi soluta, itaque at eum cum possimus! Facilis, tempora soluta at quis. Nemo expedita voluptate esse nam ex odit, sequi eveniet quibusdam, dolores?</p>
-                <p>Praesentium laboriosam iste dolore cumque voluptatibus deleniti quia, delectus provident, illum aperiam, atque molestiae. Cum delectus, doloribus expedita eius veritatis assumenda deleniti veniam reprehenderit animi ut, eaque asperiores, dicta incidunt omnis repellendus dolorum enim inventore rerum voluptatem saepe error id.</p>
+                <h1 id="testss" class="popup__title">Цена вашей работы</h1>
+                <div class="w"><p >Материал: </p><p id="mat" ></p></div>
+                <div class="w"><p >Электроэнергия: </p><p id="ele" ></p></div>
+                <div class="w"><p >Моделирование: </p><p id="mod" ></p></div>
+                <div class="w"><p >Печать: </p><p id="prt" ></p></div>
+                <div class="w"><p >Постобработка: </p><p id="pos" ></p></div>
+                <div class="w"><p >Амортизация: </p><p id="amr" ></p></div>
+                <hr>
+                <div class="w"><p >Цена одной детали: </p><p id="pone" ></p></div>
+                <div class="w"><p >Цена последующих: </p><p id="pnext" ></p></div>
+                
                 <a href="#" class="popup__close">close</a>
               </div>
             </div>
