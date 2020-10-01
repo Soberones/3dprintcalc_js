@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>3d print calc</title>
+    <meta name="description" content="Удобный калькулятор для расчета стоимости 3d печати">
+    <title>Калькулятор 3d печати</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "Много ли параметров учитывает калькулятор?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Калькулятор учитывет время печати, обработки и 3d моделирования. Кроме этого есть параметры амортизации и стоимости электричесва."
+          }
+        }, {
+          "@type": "Question",
+          "name": "Возможно ли сохранить параметры?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, вы можете сохранить параметры нажав на кнопку @сохранить. Эти параметры автоматически загрузятся при повторном входе."
+          }
+        }, {
+          "@type": "Question",
+          "name": "Если ли Android и iOS приложение?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Этот калькулятор 3d печати поддерживает pwa. Вы можете в телефоне нажать @добавить на рабочий стол, и приложение будет запускаться даже при отсутвии интернета."
+          }
+        }]
+      }
+      </script>
     <link rel="stylesheet" href="src/css/main.css" />
     <link rel="stylesheet" href="src/css/fonts.css" />
     <link rel="stylesheet" href="src/css/floating.css" />
     <link rel="manifest" href="manifest.json">
+    <!-- <link rel= "preload"> -->
     <link rel="apple-touch-icon" href="src/logo.png">
     <meta name="theme-color" content="#2a265f"/>
     <!-- <link
@@ -23,16 +52,17 @@
 
   <body>
     <header>
-      <!-- <h1 class="title">3D printer cost</h1> -->
-      <!-- <img src="src/logo.png" alt="logo" 
-      > -->
+      <h1 class="title">Удобный калькулятор для расчета стоимости 3d печати</h1> 
+      
     </header>
     <main>
+      
       <div id="test"></div>
       <div class="cards">
         <div class="Card-container">
           <div class="card">
             <div class="card-preview">
+              
               <h2>Цены на ваши услуги</h2>
               <a
                 >Сохраните параметры, чтобы не вводить каждый раз заново

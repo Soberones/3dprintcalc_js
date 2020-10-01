@@ -1,13 +1,13 @@
-if (navigator.serviceWorker.controller) {
-  console.log("[PWA Builder] active service worker found, no need to register");
-} else {
+if ("serviceWorker" in navigator) {
+  // Весь код регистрации у нас асинхронный.
   navigator.serviceWorker
-    .register("sw.js", {
-      scope: "../",
-    })
-    .then(function (reg) {
-      console.log("Service worker has been registered for scope:" + reg.scope);
-    });
+    .register("../sw.js")
+    .then(() =>
+      navigator.serviceWorker.ready.then((worker) => {
+        worker.sync.register("syncdata");
+      })
+    )
+    .catch((err) => console.log(err));
 }
 
 window.onload = function () {
@@ -65,33 +65,33 @@ save.onclick = function () {
   localStorage.setItem("depreciationPrice", depreciationPrice);
   localStorage.setItem("powerPrinter", powerPrinter);
 };
-load.onclick = function () {
-  // document.getElementById("delivery").value = localStorage.getItem("delivery");
-  document.getElementById("spoolWeight").value = localStorage.getItem(
-    "spoolWeight"
-  );
-  document.getElementById("spoolPrice").value = localStorage.getItem(
-    "spoolPrice"
-  );
-  document.getElementById("electricPrice").value = localStorage.getItem(
-    "electricPrice"
-  );
-  document.getElementById("modelingPrice").value = localStorage.getItem(
-    "modelingPrice"
-  );
-  document.getElementById("printingPrice").value = localStorage.getItem(
-    "printingPrice"
-  );
-  document.getElementById("powerPrinter").value = localStorage.getItem(
-    "powerPrinter"
-  );
-  document.getElementById("postPrice").value = localStorage.getItem(
-    "postPrice"
-  );
-  document.getElementById("depreciationPrice").value = localStorage.getItem(
-    "depreciationPrice"
-  );
-};
+// load.onclick = function () {
+//   // document.getElementById("delivery").value = localStorage.getItem("delivery");
+//   document.getElementById("spoolWeight").value = localStorage.getItem(
+//     "spoolWeight"
+//   );
+//   document.getElementById("spoolPrice").value = localStorage.getItem(
+//     "spoolPrice"
+//   );
+//   document.getElementById("electricPrice").value = localStorage.getItem(
+//     "electricPrice"
+//   );
+//   document.getElementById("modelingPrice").value = localStorage.getItem(
+//     "modelingPrice"
+//   );
+//   document.getElementById("printingPrice").value = localStorage.getItem(
+//     "printingPrice"
+//   );
+//   document.getElementById("powerPrinter").value = localStorage.getItem(
+//     "powerPrinter"
+//   );
+//   document.getElementById("postPrice").value = localStorage.getItem(
+//     "postPrice"
+//   );
+//   document.getElementById("depreciationPrice").value = localStorage.getItem(
+//     "depreciationPrice"
+//   );
+// };
 
 calculate.onclick = function () {
   const currency = "руб";
