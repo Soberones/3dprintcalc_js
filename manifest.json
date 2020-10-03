@@ -4,7 +4,7 @@
   "name": "Калькулятор стоимости 3d печати",
   "scope": "/",
   "display": "standalone",
-  "start_url": "3dprintingcost.net",
+  "start_url": "/",
   "short_name": "Калькулятор 3d печати",
   "description": "Удобный и простой калькулятор 3d gtxfnb",
   "orientation": "any",

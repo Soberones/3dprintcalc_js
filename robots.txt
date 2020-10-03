@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: 
+
+User-agent: YandexImages
+Disallow: /
+User-agent: googlebot-image
+Disallow: /
+User-agent: psbot
+Disallow: /
+User-agent: yahoo-mmcrawler
+Disallow: /

@@ -112,14 +112,8 @@ calculate.onclick = function () {
     depreciationSum;
   let fullSumtwo = fullSum - modelingSum;
 
-  console.log(materialSum, "матер");
-  console.log(electicSum, "элекст");
-  console.log(modelingSum, "модел");
-  console.log(ptintSum, "печать");
-  console.log(postSum, "пост");
-  console.log(depreciationSum, "аморт");
-  console.log(fullSum, "цена детали");
-  console.log(fullSumtwo, "цена вт детали");
+  
+  
   // document.getElementById("testss").innerHTML = materialSum;
   document.getElementById("mat").innerHTML = materialSum.toFixed(2);
   document.getElementById("ele").innerHTML = electicSum.toFixed(2);
