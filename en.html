@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
-    <link rel="alternate" hreflang="ru"
-        href="http://3dprintingcost.net/index.html" />
-  <link rel="alternate" hreflang="en"
-        href="http://3dprintingcost.net/en.html" />
       <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156469948-3"></script>
 <script>
@@ -17,32 +13,32 @@
 
     <meta name="yandex-verification" content="2d235d5481c67d1f" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Удобный калькулятор для расчета стоимости 3d печати">
-    <title>Калькулятор 3d печати</title>
+    <meta name="description" content="Smart 3d printing cost calculator">
+    <title>Cost of 3d printing</title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [{
           "@type": "Question",
-          "name": "Много ли параметров учитывает калькулятор?",
+          "name": "How many parameters does the calculator?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Калькулятор учитывает время печати, обработки и 3d моделирования. Кроме этого есть параметры амортизации и стоимости электричества."
+            "text": "The calculator takes into account printing, processing, and 3d modeling time. In addition, there are parameters for depreciation and the cost of electricity."
           }
         }, {
           "@type": "Question",
-          "name": "Возможно ли сохранить параметры?",
+          "name": "is it possible to save the parameters?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Да, вы можете сохранить параметры нажав на кнопку @сохранить. Эти параметры автоматически загрузятся при повторном входе."
+            "text": "Yes, you can save the parameters by clicking the @save button. These parameters will automatically load when you log in again."
           }
         }, {
           "@type": "Question",
-          "name": "Есть ли Android и iOS приложение?",
+          "name": "Is there an Android and iOS app?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Этот калькулятор 3d печати поддерживает pwa. Вы можете в телефоне нажать @добавить на рабочий стол, и приложение будет запускаться даже при отсутвии интернета."
+            "text": "This 3d printing calculator supports pwa. You can tap @add to desktop on your phone, and the app will launch even if you don't have Internet access."
           }
         }]
       }
@@ -71,7 +67,7 @@
   <body>
     
     <header>
-      <h1 class="title">Удобный калькулятор для расчета стоимости 3d печати</h1> 
+      <h1 class="title">3d printing cost calculator</h1> 
       
     </header>
     <main>
@@ -82,9 +78,9 @@
           <div class="card">
             <div class="card-preview">
               
-              <h2>Цены на ваши услуги</h2>
+              <h2>Prices for your services</h2>
               <a
-                >Сохраните параметры, чтобы не вводить каждый раз заново
+                >Save the parameters so that you don't have to enter them again every time
                 <i class="fas fa-chevron-right"></i
               ></a>
             </div>
@@ -97,59 +93,59 @@
                 <input id="delivery" type="number" placeholder="рублей" />
               </div> -->
               <div class="inputWrapper">
-                <p>Вес катушки</p>
+                <p>Spool weight</p>
                 <input
                   id="spoolWeight"
                   type="number"
-                  placeholder="в килограммах"
+                  placeholder="in kilos"
                 />
               </div>
               <div class="inputWrapper">
-                <p>Цена катушки</p>
+                <p>Spool price</p>
                 <input
                   id="spoolPrice"
                   type="number"
-                  placeholder="в вашей валюте"
+                  placeholder="in your currency"
                 />
               </div>
               <div class="inputWrapper">
-                <p>Цена 1 кВт</p>
-                <input id="electricPrice" type="number" placeholder="в вашей валюте" />
+                <p>Price of 1 kW of electricity</p>
+                <input id="electricPrice" type="number" placeholder="in your currency" />
               </div>
               <div class="inputWrapper">
-                <p>Мощность принтера</p>
-                <input id="powerPrinter" type="number" placeholder="кВт" />
+                <p>Printer power</p>
+                <input id="powerPrinter" type="number" placeholder="kW" />
               </div>
               <div class="inputWrapper">
-                <p>Моделирование</p>
+                <p>Modeling</p>
                 <input
                   id="modelingPrice"
                   type="number"
-                  placeholder="стоимость в час"
+                  placeholder="Cost per hour"
                 />
               </div>
               <div class="inputWrapper">
-                <p>Печать</p>
+                <p>Printing</p>
                 <input
                   id="printingPrice"
                   type="number"
-                  placeholder="стоимость в час"
+                  placeholder="Cost per hour"
                 />
               </div>
               <div class="inputWrapper">
-                <p>Постобработка</p>
-                <input id="postPrice" type="number" placeholder="стоимость в час" />
+                <p>Postprocessing</p>
+                <input id="postPrice" type="number" placeholder="Cost per hour" />
               </div>
               <div class="inputWrapper">
-                <p>Амортизация</p>
+                <p>Depreciation</p>
                 <input
                   id="depreciationPrice"
                   type="number"
-                  placeholder="за час работы"
+                  placeholder="Cost per hour"
                 />
               </div>
               <div class="btnWrapper">
-                <button id="save" class="btn">Сохранить</button>
+                <button id="save" class="btn">Save</button>
                 <!-- <button id="load" class="btn">Загрузить</button> -->
               </div>
             </div>
@@ -158,7 +154,7 @@
         <div class="Card-container">
           <div class="card">
             <div class="card-preview">
-              <h2>Затраты</h2>
+              <h2>Expenses</h2>
               <!-- <a href="#">View all chapters <i class="fas fa-chevron-right"></i></a> -->
             </div>
             <div class="card-info">
@@ -166,31 +162,30 @@
               <h2>Callbacks & Closures</h2> -->
               <form onsubmit="myFunction()">
               <div class="inputWrapper">
-                <p>Потрачено материала</p>
-                <input id="spentMaterial" type="number" placeholder="в граммах" required/>
+                <p>Material spent</p>
+                <input id="spentMaterial" type="number" placeholder="in grams" required/>
               </div>
 
               <div class="inputWrapper">
-                <p>Моделирование</p>
-                <input id="modelingTime" type="number" placeholder="в минутах" required/>
+                <p>Modeling lime</p>
+                <input id="modelingTime" type="number" placeholder="in minutes" required/>
               </div>
               <div class="inputWrapper">
-                <p>Печать</p>
-                <input id="printTime" type="number" placeholder="в минутах" required/>
+                <p>Printing time</p>
+                <input id="printTime" type="number" placeholder="in minutes" required/>
               </div>
               <div class="inputWrapper">
-                <p>Постобработка</p>
-                <input id="postTime" type="number" placeholder="в минутах" required/>
+                <p>Postprocessing time</p>
+                <input id="postTime" type="number" placeholder="in minutes" required/>
               </div>
               <!-- <div class="inputWrapper">
                 <p>Количество</p>
-                <input id="items" type="number" placeholder="в минутах" />
+                <input id="items" type="number" placeholder="in minutes" />
               </div> -->
               <!-- <div class="btnWrapper">
                 
                 <a href="#popup-article" id="calculate" class="btn">Посчитать</a>
               </div> -->
-              
               <div class="sumbitWrapper"><input class="inputSumbit" id="calculate" type="submit" ></div>
               
               
@@ -201,16 +196,16 @@
             </div>
             <div id="popup-article" class="popup">
               <div class="popup__block">
-                <h1 id="testss" class="popup__title">Цена вашей работы</h1>
-                <div class="w"><p >Материал: </p><p id="mat" ></p></div>
-                <div class="w"><p >Электроэнергия: </p><p id="ele" ></p></div>
-                <div class="w"><p >Моделирование: </p><p id="mod" ></p></div>
-                <div class="w"><p >Печать: </p><p id="prt" ></p></div>
-                <div class="w"><p >Постобработка: </p><p id="pos" ></p></div>
-                <div class="w"><p >Амортизация: </p><p id="amr" ></p></div>
+                <h1 id="testss" class="popup__title">Price of your 3D printing</h1>
+                <div class="w"><p >Plastic: </p><p id="mat" ></p></div>
+                <div class="w"><p >electricity: </p><p id="ele" ></p></div>
+                <div class="w"><p >Modeling: </p><p id="mod" ></p></div>
+                <div class="w"><p >Printing: </p><p id="prt" ></p></div>
+                <div class="w"><p >Postprocessing: </p><p id="pos" ></p></div>
+                <div class="w"><p >Depreciation: </p><p id="amr" ></p></div>
                 <hr>
-                <div class="w"><p >Цена одной детали: </p><p id="pone" ></p></div>
-                <div class="w"><p >Цена последующих: </p><p id="pnext" ></p></div>
+                <div class="w"><p >Price of one piece: </p><p id="pone" ></p></div>
+                <div class="w"><p >Price of the second and subsequent: </p><p id="pnext" ></p></div>
                 
                 <a href="#" class="popup__close">close</a>
               </div>

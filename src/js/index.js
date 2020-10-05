@@ -1,13 +1,20 @@
+// if ("serviceWorker" in navigator) {
+//   // Весь код регистрации у нас асинхронный.
+//   navigator.serviceWorker
+//     .register("../sw.js")
+//     .then(() =>
+//       navigator.serviceWorker.ready.then((worker) => {
+//         worker.sync.register("syncdata");
+//       })
+//     )
+//     .catch((err) => console.log(err));
+// }
+
 if ("serviceWorker" in navigator) {
-  // Весь код регистрации у нас асинхронный.
-  navigator.serviceWorker
-    .register("../sw.js")
-    .then(() =>
-      navigator.serviceWorker.ready.then((worker) => {
-        worker.sync.register("syncdata");
-      })
-    )
-    .catch((err) => console.log(err));
+  // Use the window load event to keep the page load performant
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("../sw.js");
+  });
 }
 
 window.onload = function () {
@@ -38,7 +45,15 @@ window.onload = function () {
 };
 
 save.onclick = function () {
-  // let delivery = Number(document.getElementById("delivery").value);
+  try {
+    saveLocal();
+    alertify.success("Сохранено");
+  } catch (error) {
+    lertify.error("Ошибка сохранения");
+  }
+};
+
+function saveLocal() {
   let spoolWeight = Number(document.getElementById("spoolWeight").value);
   let spoolPrice = Number(document.getElementById("spoolPrice").value);
   let electricPrice = Number(document.getElementById("electricPrice").value);
@@ -64,7 +79,36 @@ save.onclick = function () {
   localStorage.setItem("postPrice", postPrice);
   localStorage.setItem("depreciationPrice", depreciationPrice);
   localStorage.setItem("powerPrinter", powerPrinter);
-};
+}
+// save.onclick = function () {
+
+//   // let delivery = Number(document.getElementById("delivery").value);
+//   let spoolWeight = Number(document.getElementById("spoolWeight").value);
+//   let spoolPrice = Number(document.getElementById("spoolPrice").value);
+//   let electricPrice = Number(document.getElementById("electricPrice").value);
+//   let powerPrinter = Number(document.getElementById("powerPrinter").value);
+//   let modelingPrice = Number(document.getElementById("modelingPrice").value);
+//   let printingPrice = Number(document.getElementById("printingPrice").value);
+//   let postPrice = Number(document.getElementById("postPrice").value);
+//   let depreciationPrice = Number(
+//     document.getElementById("depreciationPrice").value
+//   );
+
+//   let spentMaterial = Number(document.getElementById("spentMaterial").value);
+//   let printTime = Number(document.getElementById("printTime").value);
+//   let modelingTime = Number(document.getElementById("printTime").value);
+//   let postTime = Number(document.getElementById("printTime").value);
+
+//   // localStorage.setItem("delivery", delivery);
+//   localStorage.setItem("spoolWeight", spoolWeight);
+//   localStorage.setItem("spoolPrice", spoolPrice);
+//   localStorage.setItem("electricPrice", electricPrice);
+//   localStorage.setItem("modelingPrice", modelingPrice);
+//   localStorage.setItem("printingPrice", printingPrice);
+//   localStorage.setItem("postPrice", postPrice);
+//   localStorage.setItem("depreciationPrice", depreciationPrice);
+//   localStorage.setItem("powerPrinter", powerPrinter);
+// };
 // load.onclick = function () {
 //   // document.getElementById("delivery").value = localStorage.getItem("delivery");
 //   document.getElementById("spoolWeight").value = localStorage.getItem(
@@ -112,8 +156,6 @@ calculate.onclick = function () {
     depreciationSum;
   let fullSumtwo = fullSum - modelingSum;
 
-  
-  
   // document.getElementById("testss").innerHTML = materialSum;
   document.getElementById("mat").innerHTML = materialSum.toFixed(2);
   document.getElementById("ele").innerHTML = electicSum.toFixed(2);
